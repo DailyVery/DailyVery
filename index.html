@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>App Download</title>
+    <script type="text/javascript">
+        function redirectToStore() {
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+            // iOS detection
+            if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                window.location.href = "https://apps.apple.com/lb/app/dailyvery-lb/id6466207099";
+            }
+            // Android detection
+            else if (/android/i.test(userAgent)) {
+                window.location.href = "https://play.google.com/store/apps/details?id=com.dailyvery.delivery";
+            } else {
+                // Fallback if neither iOS nor Android is detected
+                window.location.href = "https://play.google.com/";
+            }
+        }
+    </script>
+</head>
+<body onload="redirectToStore()">
+    <h1>Redirecting to the app store...</h1>
+</body>
+</html>
